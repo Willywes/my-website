@@ -1,6 +1,5 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 
 
 const Home: NextPage = () => {
@@ -13,7 +12,22 @@ const Home: NextPage = () => {
             </Head>
 
             <main>
-                hshs
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <h2 className="heading-first">Alejandro Isla.</h2>
+                            <h1 className="heading-first">I build things for the web.</h1>
+                        </div>
+                        <div className="col-md-7 py-3">
+                            <p>
+                                I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at <a href="https://alejandroisla.cl" target="_blank" rel="noreferrer">Upstatement</a>.
+                            </p>
+                            <button className="btn btn-outline-primary">
+                                Check my Github!
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </main>
 
             <footer>
