@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css'
-import '../assets/css/main.css';
+import '../assets/scss/theme.scss';
 import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
