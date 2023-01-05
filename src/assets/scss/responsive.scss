@@ -5,19 +5,6 @@
 }
 
 @media (max-width: 576px) {
-  .btn-responsive {
-    width: 100%;
-  }
 
-  .label-newsletter-responsive{
-    padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
-    padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
-  }
 }
 
-
-.about-us-benefits-responsive{
-  background-color: #f7f7f7;
-  border-radius: 8px;
-  height: 230px;
-}

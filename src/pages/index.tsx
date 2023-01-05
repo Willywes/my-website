@@ -2,6 +2,11 @@ import type {NextPage} from 'next'
 import Head from 'next/head'
 import Navbar from "../components/template/Navbar";
 import Footer from "../components/template/Footer";
+import CardProfile from "../components/CardProfile";
+import Resume from "../components/Resume";
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+import About from "../components/About";
 
 
 const Home: NextPage = () => {
@@ -13,28 +18,48 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
-            <Navbar />
+            <Navbar/>
 
             <main>
                 <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <h2 className="heading-first">Alejandro Isla.</h2>
-                            <h1 className="heading-first">I build things for the web.</h1>
+                    <div className="row py-5">
+                        <div className="col-md-4">
+                            <CardProfile/>
                         </div>
-                        <div className="col-md-7 py-3">
-                            <p>
-                                I’m a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at <a href="https://alejandroisla.cl" target="_blank" rel="noreferrer">Upstatement</a>.
-                            </p>
-                            <button className="btn btn-main">
-                                Check my Github!
-                            </button>
+                        <div className="col-md-8">
+                            <div className="card">
+                                <div className="card-body">
+                                    <Tabs
+                                        defaultActiveKey="about"
+                                        id="justify-tab-example"
+                                        className="mb-3"
+                                        justify
+                                        variant="pills"
+                                    >
+                                        <Tab eventKey="about" title="SOBRE MI">
+                                            <About/>
+                                        </Tab>
+                                        <Tab eventKey="resume" title="RESUMEN">
+                                            <Resume/>
+                                        </Tab>
+                                        <Tab eventKey="portafolio" title="PORTAFOLIO">
+                                            ...
+                                        </Tab>
+                                        <Tab eventKey="blog" title="BLOG">
+                                            ...
+                                        </Tab>
+                                        <Tab eventKey="contact" title="HABLEMOS">
+                                            ...
+                                        </Tab>
+                                    </Tabs>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </main>
 
-            <Footer />
+            <Footer/>
         </div>
     )
 }
