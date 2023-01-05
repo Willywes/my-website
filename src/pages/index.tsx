@@ -1,12 +1,12 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
-import Navbar from "../components/template/Navbar";
-import Footer from "../components/template/Footer";
-import CardProfile from "../components/CardProfile";
-import Resume from "../components/Resume";
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import About from "../components/About";
+import Navbar from "../components/template/Navbar";
+import Footer from "../components/template/Footer";
+import ProfileCard from "../components/ProfileCard";
+import Resume from "../components/sections/Resume";
+import About from "../components/sections/About";
 
 
 const Home: NextPage = () => {
@@ -22,9 +22,9 @@ const Home: NextPage = () => {
 
             <main>
                 <div className="container">
-                    <div className="row py-5">
+                    <div className="row py-0 py-md-5">
                         <div className="col-md-4">
-                            <CardProfile/>
+                            <ProfileCard/>
                         </div>
                         <div className="col-md-8">
                             <div className="card">

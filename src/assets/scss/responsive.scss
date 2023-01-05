@@ -5,6 +5,8 @@
 }
 
 @media (max-width: 576px) {
-
+  .tab-content {
+    max-height: unset;
+  }
 }
 
