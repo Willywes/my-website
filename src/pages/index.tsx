@@ -31,24 +31,24 @@ const Home: NextPage = () => {
                                 <div className="card-body">
                                     <Tabs
                                         defaultActiveKey="about"
-                                        id="justify-tab-example"
-                                        className="mb-3"
+                                        id="tabs-menu"
+                                        className="tabs-menu mb-3"
                                         justify
-                                        variant="pills"
+                                        // variant="pills"
                                     >
-                                        <Tab eventKey="about" title="SOBRE MI">
+                                        <Tab eventKey="about" title="Sobre Mi">
                                             <About/>
                                         </Tab>
-                                        <Tab eventKey="resume" title="RESUMEN">
+                                        <Tab eventKey="resume" title="Resumen">
                                             <Resume/>
                                         </Tab>
-                                        <Tab eventKey="portafolio" title="PORTAFOLIO">
+                                        <Tab eventKey="portafolio" title="Portafolio">
                                             ...
                                         </Tab>
-                                        <Tab eventKey="blog" title="BLOG">
+                                        <Tab eventKey="blog" title="Blog">
                                             ...
                                         </Tab>
-                                        <Tab eventKey="contact" title="HABLEMOS">
+                                        <Tab eventKey="contact" title="Hablemos">
                                             ...
                                         </Tab>
                                     </Tabs>
