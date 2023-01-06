@@ -78,13 +78,19 @@ body {
 }
 
 .tab-content {
-  padding: 1rem 0;
+  padding: 1rem 0.5rem;
   max-height: calc(100vh - (12rem + 49px));
   overflow-y: auto;
 }
 
 .tab-content::-webkit-scrollbar {
-  //width: 0.5rem;
+
+}
+.tab-content-webkit-scrollbar-thumb {
+  border: 5px solid transparent;
+  border-radius: 100px;
+  background-color: #8070d4;
+  background-clip: content-box;
 }
 
 .tabs-menu {
