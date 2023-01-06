@@ -1,5 +1,6 @@
 import React from 'react';
 import { Repository } from '../types';
+import { AiOutlineStar } from 'react-icons/ai';
 
 type Props = {
     repository: Repository;
@@ -16,7 +17,7 @@ const RepositoryCard = ({ repository }: Props) => {
         'willywes-site'
     ];
 
-    const { name, description, html_url } = repository;
+    const { name, description, html_url, language, stargazers_count } = repository;
 
     if (!filtered.includes(name)) {
         return null;
@@ -34,7 +35,13 @@ const RepositoryCard = ({ repository }: Props) => {
                             className="text-decoration-none"
                         >
                             {name}
-                        </a>
+                        </a>{' '}
+                        <span className="badge bg-secondary border-primary me-1 mb-1">
+                            {language}
+                        </span>{' '}
+                        <span className="badge bg-secondary border-primary me-1 mb-1">
+                            <AiOutlineStar /> {stargazers_count}
+                        </span>
                     </h5>
                     <p className="card-text">
                         {description?.length > 160
