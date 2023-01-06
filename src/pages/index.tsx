@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
             redirect: 'follow'
         })
             .then((response) => response.json())
-            .then((result) =>{
+            .then((result) => {
                 posts = result as Post[];
             })
             .catch((error) => console.log('error', error));
@@ -36,7 +36,6 @@ type Props = {
 };
 
 const Home = ({ posts }: Props) => {
-
     const [activeTab, setActiveTab] = useState('about');
 
     return (
