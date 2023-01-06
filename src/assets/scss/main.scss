@@ -86,7 +86,7 @@ body {
 .tab-content::-webkit-scrollbar {
 
 }
-.tab-content-webkit-scrollbar-thumb {
+.tab-content::-webkit-scrollbar-thumb {
   border: 5px solid transparent;
   border-radius: 100px;
   background-color: #8070d4;
@@ -181,42 +181,42 @@ p {
   }
 }
 
-.job-box {
+.timeline-box {
   padding-top: 5px;
 
-  .job-title {
+  .timeline-title {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
   }
 
-  .job-company-name {
+  .timeline-company {
     font-size: 0.875rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
   }
 
-  .job-period {
+  .timeline-period {
     font-size: 0.7rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
     color: $textMuted;
   }
 
-  .job-location {
+  .timeline-location {
     font-size: 0.7rem;
     font-weight: 400;
     margin-bottom: 0.5rem;
     color: $textMuted;
   }
 
-  .job-aptitudes {
+  .timeline-aptitudes {
     font-size: 0.875rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
   }
 
-  .job-description {
+  .timeline-description {
     font-size: 0.875rem;
     font-weight: 400;
     margin-bottom: 0.5rem;

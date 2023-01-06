@@ -27,21 +27,21 @@ const EducationTimelineItem = ({ education }: Props) => {
                 <span className="bullet" />
                 <span className="v-line" />
             </div>
-            <div className="col ms-3 job-box">
-                <h3 className="job-title">{title}</h3>
-                <h4 className="job-company-name">
+            <div className="col ms-3 timeline-box">
+                <h3 className="timeline-title">{title}</h3>
+                <h4 className="timeline-company">
                     <a href={institution.url} target="_blank" rel="noreferrer">
                         {institution.name}
                     </a>
-                    <span className="job-period">
+                    <span className="timeline-period">
                         {' '}
                         | {formatJobDate(period.from)} - {formatJobDate(period.to)} ·{' '}
                         {calculateDurationInYearsMonths(period.from, period.to)}
                     </span>
-                    <span className="job-location"> | {location}</span>
+                    <span className="timeline-location"> | {location}</span>
                 </h4>
                 {description && description.length > 0 && (
-                    <p className="job-description mt-2">
+                    <p className="timeline-description mt-2">
                         {showDescription ? showFullDescription() : showShortDescription()}
                         <span
                             className="text-primary"

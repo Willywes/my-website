@@ -27,20 +27,20 @@ const CertificationTimelineItem = ({ certification }: Props) => {
                 <span className="bullet" />
                 <span className="v-line" />
             </div>
-            <div className="col ms-3 job-box">
-                <h3 className="job-title">{title}</h3>
-                <h4 className="job-company-name">
+            <div className="col ms-3 timeline-box">
+                <h3 className="timeline-title">{title}</h3>
+                <h4 className="timeline-company">
                     <a href={institution.url} target="_blank" rel="noreferrer">
                         {institution.name}
                     </a>
-                    <span className="job-period"> | {formatJobDate(date)}</span>
+                    <span className="timeline-period"> | {formatJobDate(date)}</span>
                 </h4>
                 <p>
                     Código de verificación{' '}
                     <span className="badge bg-secondary border-primary">{institution.code}</span>
                 </p>
                 {description && description.length > 0 && (
-                    <p className="job-description mt-2">
+                    <p className="timeline-description mt-2">
                         {showDescription ? showFullDescription() : showShortDescription()}
                         <span
                             className="text-primary"
