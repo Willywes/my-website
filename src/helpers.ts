@@ -31,3 +31,12 @@ export const formatJobDate = (date: Date | null) => {
         month: 'long'
     });
 };
+
+export const timestampToDate = (timestamp: number) => {
+    const date = new Date(timestamp);
+    return date.toLocaleDateString('es-ES', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+};

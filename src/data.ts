@@ -1,5 +1,12 @@
 import { Certification, Education, Job } from './types';
 
+export const sections = [
+    { id: 'about', title: 'Sobre mí' },
+    { id: 'resume', title: 'Resumen' },
+    { id: 'portfolio', title: 'Portafolio' },
+    { id: 'blog', title: 'Blog' },
+    { id: 'contact', title: 'Hablemos' }
+];
 export const jobs: Job[] = [
     {
         title: 'Principal CEO',

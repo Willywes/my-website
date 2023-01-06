@@ -1,14 +1,44 @@
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
-import Navbar from '../components/template/Navbar';
-import Footer from '../components/template/Footer';
 import ProfileCard from '../components/ProfileCard';
 import Resume from '../components/sections/Resume';
 import About from '../components/sections/About';
+import { useState } from 'react';
+import Navigation from '../components/template/Navigation';
+import Blog from '../components/sections/Blog';
+import { sections } from '../data';
+import { Post } from '../types';
 
-const Home: NextPage = () => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    let posts: Post[] = [];
+
+    try {
+        await fetch('https://v1.nocodeapi.com/willywes/medium/JnQmleXbuVZgmXGD', {
+            method: 'get',
+            headers: [['Content-Type', 'application/json']],
+            redirect: 'follow'
+        })
+            .then((response) => response.json())
+            .then((result) =>{
+                posts = result as Post[];
+            })
+            .catch((error) => console.log('error', error));
+    } catch (e) {}
+    return {
+        props: {
+            posts: posts
+        }
+    };
+};
+
+type Props = {
+    posts: Post[];
+};
+
+const Home = ({ posts }: Props) => {
+
+    const [activeTab, setActiveTab] = useState('about');
+
     return (
         <div>
             <Head>
@@ -17,8 +47,6 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Navbar />
-
             <main>
                 <div className="container">
                     <div className="row py-0 py-md-5">
@@ -26,39 +54,46 @@ const Home: NextPage = () => {
                             <ProfileCard />
                         </div>
                         <div className="col-md-8">
-                            <div className="card">
+                            <div className="card card-section">
                                 <div className="card-body">
-                                    <Tabs
-                                        defaultActiveKey="about"
-                                        id="tabs-menu"
-                                        className="tabs-menu mb-3"
-                                        justify
-                                        // variant="pills"
-                                    >
-                                        <Tab eventKey="about" title="Sobre Mi">
-                                            <About />
-                                        </Tab>
-                                        <Tab eventKey="resume" title="Resumen">
-                                            <Resume />
-                                        </Tab>
-                                        <Tab eventKey="portafolio" title="Portafolio">
-                                            ...
-                                        </Tab>
-                                        <Tab eventKey="blog" title="Blog">
-                                            ...
-                                        </Tab>
-                                        <Tab eventKey="contact" title="Hablemos">
-                                            ...
-                                        </Tab>
-                                    </Tabs>
+                                    <div className="row">
+                                        <div className="col-12">
+                                            <Navigation
+                                                tabs={sections}
+                                                activeTab={activeTab}
+                                                setActiveTab={setActiveTab}
+                                            />
+                                        </div>
+                                        <div className="col-12 tab-content">
+                                            <div
+                                                className={`${
+                                                    activeTab === 'about' ? '' : 'd-none'
+                                                }`}
+                                            >
+                                                <About />
+                                            </div>
+                                            <div
+                                                className={`${
+                                                    activeTab === 'resume' ? '' : 'd-none'
+                                                }`}
+                                            >
+                                                <Resume />
+                                            </div>
+                                            <div
+                                                className={`${
+                                                    activeTab === 'blog' ? '' : 'd-none'
+                                                }`}
+                                            >
+                                                <Blog posts={posts} />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
-
-            <Footer />
         </div>
     );
 };

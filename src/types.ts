@@ -1,3 +1,8 @@
+export type Section = {
+    id: string;
+    title: string;
+};
+
 export type Job = {
     title: string;
     company: {
@@ -41,4 +46,14 @@ export type Certification = {
 export type Skill = {
     name: string;
     level: number;
+};
+
+export type Post = {
+    title: string;
+    link: string;
+    author: string;
+    published: number;
+    created: number;
+    category: string[];
+    content: string;
 };
