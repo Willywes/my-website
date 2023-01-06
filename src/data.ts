@@ -1,4 +1,4 @@
-import { Certification, Education, Job, Repository } from './types';
+import { Certification, Education, Job } from './types';
 
 export const sections = [
     { id: 'about', title: 'Sobre mí' },
@@ -197,13 +197,5 @@ export const certifications: Certification[] = [
             code: 'TLLTAKHH6Q5F'
         },
         date: new Date(2020, 11, 1)
-    }
-];
-
-const repositories: Repository[] = [
-    {
-        name: 'react-portfolio',
-        description: 'React portfolio template',
-        url: '00'
     }
 ];

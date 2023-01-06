@@ -45,7 +45,7 @@ const CertificationTimelineItem = ({ certification }: Props) => {
                     <span className="badge bg-secondary border-primary">{institution.code}</span>
                 </p>
                 {description && description.length > 0 && (
-                    <p className="timeline-description mt-2">
+                    <p className="timeline-description mt-2 mb-2">
                         {showDescription ? showFullDescription() : showShortDescription()}
                         <span
                             className="text-primary"
@@ -59,7 +59,6 @@ const CertificationTimelineItem = ({ certification }: Props) => {
                         </span>
                     </p>
                 )}
-                <br />
             </div>
         </div>
     );

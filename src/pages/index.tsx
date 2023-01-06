@@ -1,4 +1,4 @@
-import type { GetServerSideProps, NextPage } from 'next';
+import type { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import ProfileCard from '../components/ProfileCard';
 import Resume from '../components/sections/Resume';
@@ -11,9 +11,9 @@ import { Post, Repository } from '../types';
 import { Octokit } from 'octokit';
 import Portfolio from '../components/sections/Portfolio';
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
     const octokit = new Octokit({
-        auth: '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'
+        auth: process.env.GITHUB_TOKEN
     });
 
     let posts: Post[] = [];
@@ -27,7 +27,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         })
             .then((response) => response.json())
             .then((result) => {
-                posts = result as Post[];
+                if (result) {
+                    posts = result as Post[];
+                }
             })
             .catch((error) => console.log('error', error));
 
@@ -39,7 +41,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         });
 
         repos = data as Repository[];
-    } catch (e) {}
+    } catch (e) {
+        console.log(e);
+    }
 
     return {
         props: {
@@ -51,7 +55,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 type Props = {
     posts: Post[];
-    repositories: any;
+    repositories: Repository[];
 };
 
 const Home = ({ posts, repositories }: Props) => {

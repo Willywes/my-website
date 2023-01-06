@@ -60,7 +60,6 @@ const EducationTimelineItem = ({ education }: Props) => {
                         </span>
                     </p>
                 )}
-                <br />
             </div>
         </div>
     );
