@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Job } from '../types';
+import { Education } from '../types';
 import { calculateDurationInYearsMonths, formatJobDate } from '../helpers';
 
 type Props = {
-    job: Job;
+    education: Education;
 };
 
-const JobTimelineItem = ({ job }: Props) => {
-    const { title, company, period, location, aptitudes, description } = job;
+const EducationTimelineItem = ({ education }: Props) => {
+    const { title, institution, period, location, description } = education;
 
     const [showDescription, setShowDescription] = useState(false);
 
@@ -16,7 +16,9 @@ const JobTimelineItem = ({ job }: Props) => {
     };
 
     const showShortDescription = () => {
-        return description.length > 160 ? description.substring(0, 160) + '...' : description;
+        if (description) {
+            return description.length > 160 ? description.substring(0, 160) + '...' : description;
+        }
     };
 
     return (
@@ -26,11 +28,10 @@ const JobTimelineItem = ({ job }: Props) => {
                 <span className="v-line" />
             </div>
             <div className="col ms-3 job-box">
-                {/*<hr/>*/}
                 <h3 className="job-title">{title}</h3>
                 <h4 className="job-company-name">
-                    <a href={company.url} target="_blank" rel="noreferrer">
-                        {company.name}
+                    <a href={institution.url} target="_blank" rel="noreferrer">
+                        {institution.name}
                     </a>
                     <span className="job-period">
                         {' '}
@@ -39,14 +40,7 @@ const JobTimelineItem = ({ job }: Props) => {
                     </span>
                     <span className="job-location"> | {location}</span>
                 </h4>
-                <div className="job-aptitudes">
-                    {aptitudes.map((aptitude: string, index: number) => (
-                        <span className="badge bg-secondary border-primary me-1 mb-1" key={index}>
-                            {aptitude}
-                        </span>
-                    ))}
-                </div>
-                {description.length > 0 && (
+                {description && description.length > 0 && (
                     <p className="job-description mt-2">
                         {showDescription ? showFullDescription() : showShortDescription()}
                         <span
@@ -67,4 +61,4 @@ const JobTimelineItem = ({ job }: Props) => {
     );
 };
 
-export default JobTimelineItem;
+export default EducationTimelineItem;

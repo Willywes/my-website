@@ -8,12 +8,12 @@ export const calculateDurationInYearsMonths = (startDate: Date, endDate: Date | 
     const years = Math.floor(diffInMonths / 12);
     const months = Math.floor(diffInMonths % 12);
 
-    let duration = "";
+    let duration = '';
     if (years > 0) {
         duration += `${years} año${years > 1 ? 's' : ''}`;
     }
     if (years > 0 && months > 0) {
-        duration += " y ";
+        duration += ' y ';
     }
     if (months > 0) {
         duration += `${months} mes${months > 1 ? 'es' : ''}`;
@@ -30,6 +30,4 @@ export const formatJobDate = (date: Date | null) => {
         year: 'numeric',
         month: 'long'
     });
-}
-
-
+};
