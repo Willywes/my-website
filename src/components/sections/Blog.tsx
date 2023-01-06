@@ -61,17 +61,18 @@ const Blog = ({posts}: Props) => {
                              ref={(el) => el && cards.current.push(el)}
                         >
                             <img src={extractImage(post.content)} className="card-img-top" alt={post.title}/>
+                            <div className="card-post-tag">
+                                {
+                                    normalizeTags(post.category).map((cat, index) => (
+                                        <span key={index}
+                                              className="badge me-1 mb-1">{cat}</span>
+                                    ))
+                                }
+                            </div>
                             <div className="card-body">
                                 <h5 className="card-title">{post.title}</h5>
                                 <p className="card-text">{extractDescription(post.content)}</p>
-                                <div>
-                                    {
-                                        normalizeTags(post.category).map((cat, index) => (
-                                            <span key={index}
-                                                  className="badge bg-secondary border-primary me-1 mb-1">{cat}</span>
-                                        ))
-                                    }
-                                </div>
+
                             </div>
                             <div className="card-footer">
                                 <div className="row">
