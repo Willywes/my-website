@@ -30,7 +30,12 @@ const CertificationTimelineItem = ({ certification }: Props) => {
             <div className="col ms-3 timeline-box">
                 <h3 className="timeline-title">{title}</h3>
                 <h4 className="timeline-company">
-                    <a href={institution.url} target="_blank" rel="noreferrer">
+                    <a
+                        href={institution.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-decoration-none"
+                    >
                         {institution.name}
                     </a>
                     <span className="timeline-period"> | {formatJobDate(date)}</span>

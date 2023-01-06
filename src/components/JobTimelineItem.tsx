@@ -29,7 +29,12 @@ const JobTimelineItem = ({ job }: Props) => {
                 {/*<hr/>*/}
                 <h3 className="timeline-title">{title}</h3>
                 <h4 className="timeline-company">
-                    <a href={company.url} target="_blank" rel="noreferrer">
+                    <a
+                        href={company.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-decoration-none"
+                    >
                         {company.name}
                     </a>
                     <span className="timeline-period">

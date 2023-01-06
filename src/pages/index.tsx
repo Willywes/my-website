@@ -7,10 +7,17 @@ import { useState } from 'react';
 import Navigation from '../components/template/Navigation';
 import Blog from '../components/sections/Blog';
 import { sections } from '../data';
-import { Post } from '../types';
+import { Post, Repository } from '../types';
+import { Octokit } from 'octokit';
+import Portfolio from '../components/sections/Portfolio';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
+    const octokit = new Octokit({
+        auth: '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'
+    });
+
     let posts: Post[] = [];
+    let repos: Repository[] = [];
 
     try {
         await fetch('https://v1.nocodeapi.com/willywes/medium/JnQmleXbuVZgmXGD', {
@@ -23,19 +30,32 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
                 posts = result as Post[];
             })
             .catch((error) => console.log('error', error));
+
+        const { data } = await octokit.request('GET /users/{username}/repos', {
+            username: 'willywes',
+            type: 'owner',
+            sort: 'updated',
+            direction: 'desc'
+        });
+
+        repos = data as Repository[];
     } catch (e) {}
+
     return {
         props: {
-            posts: posts
+            posts: posts,
+            repositories: repos
         }
     };
 };
 
 type Props = {
     posts: Post[];
+    repositories: any;
 };
 
-const Home = ({ posts }: Props) => {
+const Home = ({ posts, repositories }: Props) => {
+    console.log(repositories);
     const [activeTab, setActiveTab] = useState('about');
 
     return (
@@ -48,7 +68,7 @@ const Home = ({ posts }: Props) => {
 
             <main>
                 <div className="container">
-                    <div className="row py-0 py-md-5">
+                    <div className="row py-3 py-md-5">
                         <div className="col-md-4">
                             <ProfileCard />
                         </div>
@@ -77,6 +97,13 @@ const Home = ({ posts }: Props) => {
                                                 }`}
                                             >
                                                 <Resume />
+                                            </div>
+                                            <div
+                                                className={`${
+                                                    activeTab === 'portfolio' ? '' : 'd-none'
+                                                }`}
+                                            >
+                                                <Portfolio repositories={repositories} />
                                             </div>
                                             <div
                                                 className={`${

@@ -89,7 +89,7 @@ const Blog = ({ posts }: Props) => {
                                             rel="noreferrer"
                                             className="btn btn-more my-auto px-4"
                                         >
-                                            Continuar
+                                            Ir a artículo
                                         </a>
                                     </div>
                                 </div>

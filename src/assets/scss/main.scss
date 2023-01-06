@@ -134,7 +134,7 @@ body {
 h2 {
   font-size: 1.875rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 h2:after {
@@ -226,7 +226,7 @@ p {
 }
 
 .border-primary {
-  border: 1px solid $primary !important;
+  border: 1px solid $borderColorDark !important;
 }
 
 .card-post {
@@ -279,32 +279,55 @@ p {
 
   .card-footer {
     .card-date {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 400;
       margin-bottom: 0.5rem;
       color: rgba(255, 255, 255, 0.5);
     }
 
     .card-author {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 400;
       margin-bottom: 0.5rem;
       color: rgba(255, 255, 255, 0.5);
     }
+  }
+}
 
-    .btn-more {
-      font-size: 0.75rem;
-      font-weight: 400;
+.card-repository {
+  border: 1px solid $borderColorDark;
+  border-radius: 10px;
+  overflow: hidden;
+  background: $bgLight;
+
+  .card-body {
+    padding: 1rem;
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
       margin-bottom: 0.5rem;
-      color: white;
-      background-color: $secondary;
-      border: 1px solid $primary;
-
-      &:hover {
-        color: white;
-        background: $primary;
-        border: 1px solid $primary;
-      }
     }
+
+    .card-text {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: $textMuted;
+    }
+  }
+}
+
+.btn-more {
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: white;
+  background-color: $secondary;
+  border: 1px solid $primary;
+  border-radius: 10px;
+
+  &:hover {
+    color: white;
+    background: $primary;
+    border: 1px solid $primary;
   }
 }
