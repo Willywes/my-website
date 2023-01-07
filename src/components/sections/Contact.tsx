@@ -38,7 +38,6 @@ const Contact = () => {
                 body: JSON.stringify({ name, email, message })
             })
                 .then((res) => {
-                    console.log(res.status);
                     if (res.status === 200) {
                         runSuccess();
                     } else {
