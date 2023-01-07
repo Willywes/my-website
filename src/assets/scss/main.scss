@@ -1,3 +1,5 @@
+@import "_variables";
+
 body {
   margin: 0;
   padding: 0;
@@ -5,56 +7,407 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  background-color: #0a192f;
-  color: #8892b0;
+  background-color: $bgLight;
+  color: $textLight;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.heading-first,
-.heading-secondary {
+.card {
+  background-color: $bgDark;
+  //border: 1px solid $bgLight;
+  border-radius: 15px;
+  //box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  color: $textLight;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-profile {
+  .card-body {
+    padding: 4rem 2rem;
+    text-align: center;
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 10px solid #031e3d;
+      margin: 0 auto;
+      background: #031e3d;
+    }
+
+    .name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 2rem;
+      margin-bottom: 0;
+    }
+
+    .title {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-top: 0.5rem;
+      //border: 1px solid $primary;
+      //padding: 0.5rem 1rem;
+      //border-radius: 15px;
+      //background-color: $bgLight;
+    }
+
+    .social-media {
+      margin-top: 2rem;
+
+      .social-media-icon {
+        margin-right: 5px;
+        margin-left: 5px;
+
+        img {
+          transition: transform .2s;
+
+          &:hover {
+            transform: scale(1.3);
+          }
+        }
+      }
+    }
+  }
+}
+
+.tab-content {
+  padding: 1.5rem;
+  height: calc(100vh - (12rem + 49px));
+  min-height: 500px;
+  overflow-y: auto;
+}
+
+.tab-content::-webkit-scrollbar {
+
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+  border: 5px solid transparent;
+  border-radius: 100px;
+  background-color: #8070d4;
+  background-clip: content-box;
+}
+
+.tabs-menu {
+  border: 0;
+
+  li {
+    background-color: #1059b3;
+    overflow: hidden;
+  }
+
+  li:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  li:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .nav-link {
+    color: #99CCF3;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.25;
+    height: 49px;
+    border: 0;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus,
+  .nav-link.active {
+    color: #fff;
+    background-color: transparent;
+    border: 0;
+  }
+}
+
+h2 {
+  font-size: 1.875rem;
   font-weight: 600;
-  color: #ccd6f6;
-  line-height: 1.1;
-  margin: 0;
-  font-size: clamp(40px, 8vw, 80px);
+  margin-bottom: 2rem;
 }
 
-.heading-secondary {
-  margin-top: 10px;
-  color: #8892b0;
-  line-height: 0.9;
+h2:after {
+  content: "";
+  display: block;
+  width: 3em;
+  max-width: 50%;
+  margin-top: 1.5rem;
+  border-radius: 5rem;
+  border-bottom: 3px solid #1a7ef6;
 }
 
-
-.color-text-highlight {
-  color: #ccd6f6
+p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $textMuted;
 }
 
-.color-text {
-  color: #8892b0
+.timeline {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 0%;
+  -webkit-box-align: center;
+  align-items: center;
+
+  .bullet {
+    display: flex;
+    align-self: baseline;
+    border-style: solid;
+    border-width: 2px;
+    padding: 4px;
+    border-radius: 50%;
+    margin: 11.5px 0px;
+    border-color: transparent;
+    color: rgb(255, 255, 255);
+    background-color: $primary;
+    box-shadow: rgb(255 76 81 / 12%) 0px 0px 0px 3px;
+  }
+
+  .v-line {
+    width: 2px;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    background-color: rgba(231, 227, 252, 0.12);
+  }
 }
 
-.color-hint {
-  color: $color-hint
+.timeline-box {
+  padding-top: 6px;
+
+  .timeline-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-company {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-period {
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: $textMuted;
+  }
+
+  .timeline-location {
+    font-size: 0.7rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: $textMuted;
+  }
+
+  .timeline-aptitudes {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-description {
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
 }
 
-.bg-hint {
-  background: $color-hint
+.border-primary {
+  border: 1px solid $borderColorDark !important;
 }
 
-.btn-main,
-.btn-main:hover,
-.btn-main:focus,
-.btn-main:active {
-  border: 1px solid $color-hint;
-  color: $color-hint;
-  padding: 1.25rem 1.75rem;
-  font-size: 13px;
-  border-radius: 4px;
+.card-post {
+  border-radius: 10px;
+  overflow: hidden;
+  background: $secondary;
+  position: relative;
+
+  .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card-post-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+    .badge {
+      background: rgba(0, 30, 60, 0.75);
+      color: white;
+      font-size: 0.7rem;
+    }
+  }
+
+  .card-body {
+    padding: 1.5rem;
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      min-height: 50px;
+    }
+
+    .card-subtitle {
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: $textMuted;
+    }
+
+    .card-text {
+      font-size: 0.875rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .card-footer {
+    .card-date {
+      font-size: 0.7rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .card-author {
+      font-size: 0.7rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
 }
 
-.btn-main:hover,
-.btn-main:focus,
-.btn-main:active {
-  background: rgba(47, 147, 242, 0.1);
+.card-repository {
+  border: 1px solid $borderColorDark;
+  border-radius: 10px;
+  overflow: hidden;
+  background: $bgLight;
+
+  .card-body {
+    padding: 1rem;
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: $textMuted;
+    }
+  }
+}
+
+.btn-more {
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: white;
+  background-color: $secondary;
+  border: 1px solid $primary;
+  border-radius: 7px;
+
+  &:hover {
+    color: white;
+    background: $primary;
+    border: 1px solid $primary;
+  }
+}
+
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  margin-left: 3px;
+  color: $textMuted;
+}
+
+.form-control {
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: $textMuted;
+  background-color: $bgLight;
+  border: 1px solid $borderColorDark;
+  border-radius: 7px;
+  padding: 0.5rem 1rem;
+}
+
+.form-control:focus {
+  color: $textMuted;
+  background-color: $bgLight;
+  border: 1px solid $primary;
+  outline: 0;
+  box-shadow: none;
+}
+
+.form-control::placeholder {
+  color: $textMuted;
+  opacity: 1;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: $bgLight;
+  opacity: 1;
+}
+
+.btn-form {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: white;
+  background-color: $secondary;
+  border: 1px solid $primary;
+  border-radius: 7px;
+
+  &:hover {
+    color: white;
+    background: $primary;
+    border: 1px solid $primary;
+  }
+}
+
+.alert-success {
+  color: rgb(204, 232, 205);
+  background-color: rgb(12, 19, 13);
+  border: 1px solid rgb(12, 19, 13);
+  border-radius: 7px;
+  font-size: 0.875rem;
+}
+
+.alert-danger {
+  color: rgb(244, 199, 199);
+  background-color: rgb(22, 11, 11);
+  border: 1px solid rgb(22, 11, 11);
+  border-radius: 7px;
+  font-size: 0.875rem;
+}
+
+.icon-success {
+  color: rgb(102, 187, 106);
+  font-size: 1.5rem;
+}
+
+.icon-danger {
+  color: rgb(244, 67, 54);
+  font-size: 1.5rem;
 }

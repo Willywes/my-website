@@ -5,19 +5,15 @@
 }
 
 @media (max-width: 576px) {
-  .btn-responsive {
-    width: 100%;
+  .tab-content {
+    padding: 2rem 1rem;
+    height: unset;
   }
 
-  .label-newsletter-responsive{
-    padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
-    padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+  .card-section {
+    .card-body {
+      padding: 1rem;
+    }
   }
 }
 
-
-.about-us-benefits-responsive{
-  background-color: #f7f7f7;
-  border-radius: 8px;
-  height: 230px;
-}
