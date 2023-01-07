@@ -323,11 +323,90 @@ p {
   color: white;
   background-color: $secondary;
   border: 1px solid $primary;
-  border-radius: 10px;
+  border-radius: 7px;
 
   &:hover {
     color: white;
     background: $primary;
     border: 1px solid $primary;
   }
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: $textMuted;
+}
+
+.form-control {
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: $textMuted;
+  background-color: $bgLight;
+  border: 1px solid $borderColorDark;
+  border-radius: 7px;
+  padding: 0.5rem 1rem;
+}
+
+.form-control:focus {
+  color: $textMuted;
+  background-color: $bgLight;
+  border: 1px solid $primary;
+  outline: 0;
+  box-shadow: none;
+}
+
+.form-control::placeholder {
+  color: $textMuted;
+  opacity: 1;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: $bgLight;
+  opacity: 1;
+}
+
+.btn-form {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: white;
+  background-color: $secondary;
+  border: 1px solid $primary;
+  border-radius: 7px;
+
+  &:hover {
+    color: white;
+    background: $primary;
+    border: 1px solid $primary;
+  }
+}
+
+.alert-success {
+  color: rgb(204, 232, 205);
+  background-color: rgb(12, 19, 13);
+  border: 1px solid rgb(12, 19, 13);
+  border-radius: 7px;
+  font-size: 0.875rem;
+}
+
+.alert-danger {
+  color: rgb(244, 199, 199);
+  background-color: rgb(22, 11, 11);
+  border: 1px solid rgb(22, 11, 11);
+  border-radius: 7px;
+  font-size: 0.875rem;
+}
+
+.icon-success {
+  color: rgb(102, 187, 106);
+  font-size: 1.5rem;
+}
+
+.icon-danger {
+  color: rgb(244, 67, 54);
+  font-size: 1.5rem;
 }
