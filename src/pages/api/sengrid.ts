@@ -12,8 +12,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         const msg = `Nombre: ${name}\r\n Email: ${email}\r\n Mensaje: ${message}`;
         const data = {
             to: 'alejandro.isla.c@gmail.com',
-            from: 'hola@devlabs.cl',
-            subject: `${name.toUpperCase()} te ha enviado un mensaje`,
+            from: 'alejandro.isla.c@gmail.com',
+            subject: `WEBSITE - ${name.toUpperCase()} te ha enviado un mensaje`,
             text: `Email => ${email}`,
             html: msg.replace(/\r\n/g, '<br>')
         };
