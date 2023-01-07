@@ -14,7 +14,7 @@ const RepositoryCard = ({ repository }: Props) => {
         'ProyectoKIRA',
         'chilean-rut-php',
         'Basic-Video-Call',
-        'willywes-site'
+        'my-website'
     ];
 
     const { name, description, html_url, language, stargazers_count } = repository;

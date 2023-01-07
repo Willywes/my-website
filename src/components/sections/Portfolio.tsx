@@ -6,7 +6,6 @@ type Props = {
     repositories: Repository[];
 };
 const Portfolio = ({ repositories }: Props) => {
-    console.log(repositories);
     return (
         <>
             <h2>Repositorios</h2>
