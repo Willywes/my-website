@@ -10,6 +10,7 @@ import { sections } from '../data';
 import { Post, Repository } from '../types';
 import { Octokit } from 'octokit';
 import Portfolio from '../components/sections/Portfolio';
+import Contact from '../components/sections/Contact';
 
 export const getServerSideProps: GetServerSideProps = async () => {
     const octokit = new Octokit({
@@ -20,15 +21,18 @@ export const getServerSideProps: GetServerSideProps = async () => {
     let repos: Repository[] = [];
 
     try {
-        await fetch('https://v1.nocodeapi.com/willywes/medium/JnQmleXbuVZgmXGD', {
-            method: 'get',
-            headers: [['Content-Type', 'application/json']],
-            redirect: 'follow'
-        })
+        await fetch(
+            'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@willywes',
+            {
+                method: 'get',
+                headers: [['Content-Type', 'application/json']],
+                redirect: 'follow'
+            }
+        )
             .then((response) => response.json())
             .then((result) => {
                 if (result) {
-                    posts = result as Post[];
+                    posts = result.items as Post[];
                 }
             })
             .catch((error) => console.log('error', error));
@@ -59,7 +63,6 @@ type Props = {
 };
 
 const Home = ({ posts, repositories }: Props) => {
-    console.log(repositories);
     const [activeTab, setActiveTab] = useState('about');
 
     return (
@@ -115,6 +118,14 @@ const Home = ({ posts, repositories }: Props) => {
                                                 }`}
                                             >
                                                 <Blog posts={posts} />
+                                            </div>
+
+                                            <div
+                                                className={`${
+                                                    activeTab === 'contact' ? '' : 'd-none'
+                                                }`}
+                                            >
+                                                <Contact />
                                             </div>
                                         </div>
                                     </div>

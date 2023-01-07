@@ -40,3 +40,27 @@ export const timestampToDate = (timestamp: number) => {
         day: 'numeric'
     });
 };
+
+export const validateForm = ({
+    name,
+    email,
+    message
+}: {
+    name: string;
+    email: string;
+    message: string;
+}) => {
+    const errors: { name?: string; email?: string; message?: string } = {};
+    if (!name || name.trim() === '') {
+        errors.name = 'El nombre es requerido';
+    }
+    if (!email || email.trim() === '') {
+        errors.email = 'Email is required';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+        errors.email = 'El email es requerido';
+    }
+    if (!message || message.trim() === '') {
+        errors.message = 'El mensaje es requerido';
+    }
+    return errors;
+};

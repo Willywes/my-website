@@ -5,7 +5,6 @@ import { timestampToDate } from '../../helpers';
 type Props = {
     posts: Post[];
 };
-
 const Blog = ({ posts }: Props) => {
     const cards = useRef<HTMLDivElement[]>([]);
 
@@ -65,7 +64,7 @@ const Blog = ({ posts }: Props) => {
                                 alt={post.title}
                             />
                             <div className="card-post-tag">
-                                {normalizeTags(post.category).map((cat, index) => (
+                                {normalizeTags(post.categories).map((cat, index) => (
                                     <span key={index} className="badge me-1 mb-1">
                                         {cat}
                                     </span>
@@ -79,7 +78,7 @@ const Blog = ({ posts }: Props) => {
                                 <div className="row">
                                     <div className="col d-flex">
                                         <div className="card-date my-auto">
-                                            {timestampToDate(post.created)}
+                                            {timestampToDate(new Date(post.pubDate).getTime())}
                                         </div>
                                     </div>
                                     <div className="col-auto text-end d-flex">

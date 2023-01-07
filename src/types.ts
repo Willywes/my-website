@@ -53,8 +53,8 @@ export type Post = {
     link: string;
     author: string;
     published: number;
-    created: number;
-    category: string[];
+    pubDate: string;
+    categories: string[];
     content: string;
 };
 
@@ -62,8 +62,15 @@ export type Repository = {
     name: string;
     description: string;
     html_url: string;
-
     language: string;
     stargazers_count: number;
     forks_count: number;
+};
+
+export type Project = {
+    title: string;
+    description: string;
+    url: string;
+    image: string;
+    technologies: string[];
 };
