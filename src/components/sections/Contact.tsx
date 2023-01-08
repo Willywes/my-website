@@ -129,20 +129,22 @@ const Contact = () => {
                 )}
             </div>
 
-            {sending ? (
-                <button className="btn btn-form mt-3" type="button" disabled>
+            <div className="d-flex justify-content-end">
+                {sending ? (
+                    <button className="btn btn-form mt-3" type="button" disabled>
                     <span
                         className="spinner-border spinner-border-sm"
                         role="status"
                         aria-hidden="true"
                     ></span>
-                    Enviando...
-                </button>
-            ) : (
-                <button className="btn btn-form mt-3 px-5" type="button" onClick={handleSubmit}>
-                    Enviar
-                </button>
-            )}
+                        Enviando...
+                    </button>
+                ) : (
+                    <button className="btn btn-form mt-3" type="button" onClick={handleSubmit}>
+                        Enviar
+                    </button>
+                )}
+            </div>
         </>
     );
 };

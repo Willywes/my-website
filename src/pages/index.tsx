@@ -70,10 +70,10 @@ const Home = ({ posts, repositories }: Props) => {
             <main>
                 <div className="container">
                     <div className="row py-3 py-md-5">
-                        <div className="col-md-4">
+                        <div className="col-lg-4">
                             <ProfileCard />
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-lg-8">
                             <div className="card card-section">
                                 <div className="card-body">
                                     <div className="row">
