@@ -132,11 +132,11 @@ const Contact = () => {
             <div className="d-flex justify-content-end">
                 {sending ? (
                     <button className="btn btn-form mt-3" type="button" disabled>
-                    <span
-                        className="spinner-border spinner-border-sm"
-                        role="status"
-                        aria-hidden="true"
-                    ></span>
+                        <span
+                            className="spinner-border spinner-border-sm"
+                            role="status"
+                            aria-hidden="true"
+                        ></span>
                         Enviando...
                     </button>
                 ) : (
