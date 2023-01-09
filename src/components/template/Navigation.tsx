@@ -19,13 +19,16 @@ const Navigation = ({ tabs, activeTab, setActiveTab }: Props) => {
     // },  [showMenu]);
 
     const handleShow = (tab: string) => {
+
         setActiveTab(tab);
         setShowMenu(false);
-        window.scroll({
-            top: 500,
-            left: 0,
-            behavior: 'smooth'
-        });
+        setTimeout(() => {
+            window.scroll({
+                top: 500,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }, 100);
     };
 
     const handleShowMenu = () => {
