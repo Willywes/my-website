@@ -14,9 +14,7 @@ body {
 
 .card {
   background-color: $bgDark;
-  //border: 1px solid $bgLight;
   border-radius: 15px;
-  //box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   color: $textLight;
   margin-bottom: 1rem;
 }
@@ -31,24 +29,20 @@ body {
     text-align: center;
 
     .avatar {
-      width: 200px;
-      height: 200px;
+      width: 170px;
+      height: 170px;
       border-radius: 50%;
-      //border: 10px solid #031e3d;
       margin: 0 auto;
       background-color: #031e3d;
       background-image: url("../images/bg3.gif");
       background-position: center;
-      //background-size: cover;
-      background-size: 340px;
-      //box-shadow: 0 0 0 rgb(0 0 0 / 50%);
+      background-size: 290px;
       transition: all 0.3s ease-in-out;
     }
 
     .avatar:hover {
       transform: scale(1.05);
       border: 5px solid $primary;
-      //box-shadow: 0 0 20px rgb(0 0 0 / 50%);
     }
 
     .name {
@@ -63,10 +57,6 @@ body {
       font-size: 1rem;
       font-weight: 500;
       margin-top: 0.5rem;
-      //border: 1px solid $primary;
-      //padding: 0.5rem 1rem;
-      //border-radius: 15px;
-      //background-color: $bgLight;
     }
 
     .social-media {
@@ -167,7 +157,6 @@ body {
   .nav-item:hover::after,
   .nav-item:focus::after,
   .nav-item.active::after {
-    //background: #fff;
     width: 100%;
     height: 2px;
     box-shadow: inset 0 0 0 0 #1059b3,
@@ -373,7 +362,6 @@ p {
 
   &:hover {
     color: white;
-    //background: $primary;
     border: 1px solid $primary;
     box-shadow: inset -60px 0 0 0 $primary,
     inset 60px 0 0 0 $primary;
@@ -430,7 +418,6 @@ p {
 
   &:hover {
     color: white;
-    //background: $primary;
     border: 1px solid $primary;
     box-shadow: inset -60px 0 0 0 $primary,
     inset 60px 0 0 0 $primary;
@@ -478,7 +465,6 @@ p {
   }
 }
 
-
 .btn-menu {
   width: 48px;
   height: 48px;
@@ -492,7 +478,6 @@ p {
   right: 20px;
   transform: translateX(0);
   z-index: 9999;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
   .bar:nth-child(1) {
     animation: top-bar-reverse .7s cubic-bezier(0.5, 0.2, 0.2, 1.01) forwards;
@@ -506,17 +491,7 @@ p {
     animation: bottom-bar-reverse .7s cubic-bezier(0.5, 0.2, 0.2, 1.01) forwards;
   }
 
-  &:hover,
-  &:focus {
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2) !important;
-  }
-
   &.active {
-
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    //right: 50%;
-    //transform: translateX(50%);
-
     .bar:nth-child(1) {
       animation: top-bar .7s cubic-bezier(0.5, 0.2, 0.2, 1.01) forwards;
     }
@@ -531,12 +506,10 @@ p {
   }
 }
 
-
 .icon-menu {
   width: 100%;
   height: 100%;
   margin: auto;
-  //border-radius: 50%;
   overflow: hidden;
 
   .bar {
@@ -618,13 +591,16 @@ p {
   .nav-link {
     text-align: center;
     font-size: 1rem;
-    color: white;
+    line-height: 1.25;
+    color: #99CCF3;
     cursor: pointer;
     transition: all .5s ease-in-out;
 
     &.active,
     &:hover {
+      color: white;
       font-weight: bold;
+      font-size: 1.05rem;
     }
 
   }
@@ -634,6 +610,6 @@ p {
   opacity: 0.85;
 }
 
-.modal-open{
+.modal-open {
   overflow: hidden;
 }

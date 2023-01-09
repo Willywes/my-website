@@ -19,7 +19,6 @@ const Navigation = ({ tabs, activeTab, setActiveTab }: Props) => {
     // },  [showMenu]);
 
     const handleShow = (tab: string) => {
-
         setActiveTab(tab);
         setShowMenu(false);
         setTimeout(() => {
@@ -83,9 +82,7 @@ const Navigation = ({ tabs, activeTab, setActiveTab }: Props) => {
                                                     activeTab == tab.id ? 'active' : ''
                                                 }`}
                                             >
-                                                <span className="text-white pointer">
-                                                    {tab.title}
-                                                </span>
+                                                <span className="">{tab.title}</span>
                                             </div>
                                         </li>
                                     ))}
