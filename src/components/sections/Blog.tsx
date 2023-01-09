@@ -86,9 +86,9 @@ const Blog = ({ posts }: Props) => {
                                             href={post.link}
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="btn btn-more my-auto px-4"
+                                            className="btn btn-more my-auto"
                                         >
-                                            Ir a artículo
+                                            Ir al artículo
                                         </a>
                                     </div>
                                 </div>

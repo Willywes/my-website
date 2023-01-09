@@ -1,10 +1,11 @@
-@media (min-width: 576px) {
+@media (min-width: 620px) {
   .container-sm, .container {
     max-width: 1170px;
   }
 }
 
-@media (max-width: 576px) {
+
+@media (max-width: 620px) {
   .tab-content {
     padding: 2rem 1rem;
     height: unset;
@@ -15,5 +16,18 @@
       padding: 1rem;
     }
   }
+
+  #tabs-menu {
+    display: none;
+  }
+
+  .card-section {
+    margin-bottom: 5rem;
+  }
 }
 
+@media (min-width: 620px) {
+  #mobile-menu {
+    display: none;
+  }
+}

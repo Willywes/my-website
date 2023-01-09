@@ -1,6 +1,6 @@
 export const APP_CONFIG = {
     APP_NAME: 'Alejandro Isla',
-    APP_TITLE: 'Alejandro Isla | Full Stack Develop',
+    APP_TITLE: 'Alejandro Isla | Full Stack Developer',
     APP_DESCRIPTION:
         'Hola, mi nombre es Alejandro y soy ingeniero en informática con 12 años de experiencia en el área del desarrollo de software.',
     APP_KEYWORDS:
