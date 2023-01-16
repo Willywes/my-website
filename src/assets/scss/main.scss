@@ -17,6 +17,7 @@ body {
   border-radius: 15px;
   color: $textLight;
   margin-bottom: 1rem;
+  //border: 1px solid #202637;
 }
 
 .card-body {
@@ -46,7 +47,7 @@ body {
     //  border: 5px solid $primary;
     //}
 
-    .avatar.pulse{
+    .avatar.pulse {
       transform: scale(1.05);
       border: 5px solid $primary;
     }
@@ -336,7 +337,7 @@ p {
 }
 
 .card-repository {
-  border: 1px solid $borderColorDark;
+  border: 1px solid #1e4976; //1px solid $borderColorDark;
   border-radius: 10px;
   overflow: hidden;
   background: $bgLight;
@@ -620,10 +621,6 @@ p {
 
 .modal-open {
   overflow: hidden;
-}
-
-.card {
-  border: 1px solid #202637;
 }
 
 .link-more {
