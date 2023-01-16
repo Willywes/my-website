@@ -33,14 +33,20 @@ body {
       height: 170px;
       border-radius: 50%;
       margin: 0 auto;
-      background-color: #031e3d;
+      background-color: $bgDark;
       background-image: url("../images/bg3.gif");
       background-position: center;
       background-size: 290px;
       transition: all 0.3s ease-in-out;
     }
 
-    .avatar:hover {
+    //.avatar.active,
+    //.avatar:hover {
+    //  transform: scale(1.05);
+    //  border: 5px solid $primary;
+    //}
+
+    .avatar.pulse{
       transform: scale(1.05);
       border: 5px solid $primary;
     }
@@ -51,6 +57,7 @@ body {
       text-transform: uppercase;
       margin-top: 2rem;
       margin-bottom: 0;
+      color: rgb(231 238 247); //rgba(255, 255, 255, 0.95);
     }
 
     .title {
@@ -133,7 +140,7 @@ body {
   .nav-link:hover,
   .nav-link:focus,
   .nav-link.active {
-    color: #fff;
+    color: rgb(231 238 247); //rgba(255, 255, 255, 0.9);
     background-color: transparent;
     border: 0;
   }
@@ -149,8 +156,8 @@ body {
     height: 2px;
     background: white;
     transition: all .5s ease-in-out;
-    box-shadow: inset -80px 0 0 0 #1059b3,
-    inset 80px 0 0 0 #1059b3;
+    box-shadow: inset -80px 0 0 0 $primary, // #1059b3,
+    inset 80px 0 0 0 $primary; // #1059b3;
 
   }
 
@@ -159,8 +166,8 @@ body {
   .nav-item.active::after {
     width: 100%;
     height: 2px;
-    box-shadow: inset 0 0 0 0 #1059b3,
-    inset 0 0 0 0 #1059b3;
+    box-shadow: inset 0 0 0 0 $primary, // #1059b3,
+    inset 0 0 0 0 $primary; // #1059b3;
   }
 }
 
@@ -177,7 +184,7 @@ h2:after {
   max-width: 50%;
   margin-top: 1.5rem;
   border-radius: 5rem;
-  border-bottom: 3px solid #1a7ef6;
+  border-bottom: 3px solid $primary; // #1a7ef6;
 }
 
 p {
@@ -185,6 +192,7 @@ p {
   font-weight: 400;
   line-height: 1.5;
   color: $textMuted;
+
 }
 
 .timeline {
@@ -612,4 +620,19 @@ p {
 
 .modal-open {
   overflow: hidden;
+}
+
+.card {
+  border: 1px solid #202637;
+}
+
+.link-more {
+  cursor: pointer;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+
+.badge.bg-secondary {
+  color: $textLight;
 }
