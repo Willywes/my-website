@@ -48,12 +48,8 @@ const CertificationTimelineItem = ({ certification }: Props) => {
                     <p className="timeline-description mt-2 mb-2">
                         {showDescription ? showFullDescription() : showShortDescription()}
                         <span
-                            className="text-primary"
+                            className="text-primary link-more"
                             onClick={() => setShowDescription(!showDescription)}
-                            style={{
-                                cursor: 'pointer',
-                                fontSize: '0.8rem'
-                            }}
                         >
                             {showDescription ? ' Ver menos -' : ' Ver más +'}
                         </span>
