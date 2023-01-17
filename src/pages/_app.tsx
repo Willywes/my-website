@@ -151,8 +151,13 @@ function App({ Component, pageProps }: AppProps) {
                 scriptProps={{
                     async: false, // optional, default to false,
                     defer: true, // optional, default to false
-                    appendTo: 'body', // optional, default to "head", can be "head" or "body",
+                    appendTo: 'head', // optional, default to "head", can be "head" or "body",
                     nonce: undefined
+                }}
+                container={{
+                    parameters: {
+                        theme: 'dark'
+                    }
                 }}
             >
                 <Component {...pageProps} />
