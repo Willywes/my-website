@@ -633,3 +633,15 @@ p {
 .badge.bg-secondary {
   color: $textLight;
 }
+
+/*Mover Recaptcha a la izquierda*/
+.grecaptcha-badge {
+  width: 70px !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  left: -2px !important;
+  bottom: 20px !important;
+}
+.grecaptcha-badge:hover {
+  width: 256px !important;
+}
