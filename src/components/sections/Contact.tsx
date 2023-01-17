@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useState } from 'react';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { BsCheck2Circle } from 'react-icons/bs';
 import { BiErrorCircle } from 'react-icons/bi';
 
@@ -8,6 +9,8 @@ const defaultFormState = {
     message: ''
 };
 const Contact = () => {
+    const { executeRecaptcha } = useGoogleReCaptcha();
+
     const [data, setData] = useState(defaultFormState);
     const [sending, setSending] = useState(false);
     const [success, setSuccess] = useState(false);
@@ -22,6 +25,18 @@ const Contact = () => {
     };
 
     const handleSubmit = async () => {
+        if (!executeRecaptcha) {
+            alert('Por favor, espere a que se cargue el captcha.');
+            return;
+        }
+
+        const token = await executeRecaptcha();
+
+        if (!token) {
+            alert('Error con el token de recaptcha, por favor intente de nuevo');
+            return;
+        }
+
         setSending(true);
         try {
             const { name, email, message } = data;
@@ -35,7 +50,7 @@ const Contact = () => {
             await fetch('/api/sengrid', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, message })
+                body: JSON.stringify({ name, email, message, token })
             })
                 .then((res) => {
                     if (res.status === 200) {
@@ -50,6 +65,7 @@ const Contact = () => {
         }
         setSending(false);
     };
+
     const runSuccess = () => {
         setData(defaultFormState);
         setSuccess(true);

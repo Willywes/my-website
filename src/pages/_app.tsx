@@ -3,6 +3,7 @@ import '../assets/scss/theme.scss';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { APP_CONFIG } from '../config';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 function App({ Component, pageProps }: AppProps) {
     return (
@@ -145,7 +146,22 @@ function App({ Component, pageProps }: AppProps) {
                     }}
                 />
             </Head>
-            <Component {...pageProps} />
+            <GoogleReCaptchaProvider
+                reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''}
+                scriptProps={{
+                    async: false, // optional, default to false,
+                    defer: true, // optional, default to false
+                    appendTo: 'head', // optional, default to "head", can be "head" or "body",
+                    nonce: undefined
+                }}
+                container={{
+                    parameters: {
+                        theme: 'dark'
+                    }
+                }}
+            >
+                <Component {...pageProps} />
+            </GoogleReCaptchaProvider>
         </>
     );
 }
