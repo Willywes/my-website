@@ -44,7 +44,7 @@ const Blog = ({ posts }: Props) => {
     };
 
     const normalizeTags = (tags: string[]) => {
-        return tags.map((tag) => tag.toLowerCase().replaceAll('-', ' '));
+        return tags.map((tag) => tag.toLowerCase().replace(/-/g, ' '));
     };
 
     return (
