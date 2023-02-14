@@ -1,11 +1,11 @@
-import { Certification, Education, Job } from './types';
+import {Certification, Education, Job} from './types';
 
 export const sections = [
-    { id: 'about', title: 'Sobre mí' },
-    { id: 'resume', title: 'Resumen' },
-    { id: 'portfolio', title: 'Portafolio' },
-    { id: 'blog', title: 'Blog' },
-    { id: 'contact', title: 'Hablemos' }
+    {id: 'about', title: 'Sobre mí'},
+    {id: 'resume', title: 'Resumen'},
+    {id: 'portfolio', title: 'Portafolio'},
+    {id: 'blog', title: 'Blog'},
+    {id: 'contact', title: 'Hablemos'}
 ];
 export const jobs: Job[] = [
     {
@@ -16,7 +16,7 @@ export const jobs: Job[] = [
         },
         location: 'Chile, remoto',
         period: {
-            from: new Date(2020, 9, 1),
+            from: new Date(2022, 9 - 1, 1),
             to: null
         },
         aptitudes: [
@@ -37,7 +37,7 @@ export const jobs: Job[] = [
         },
         location: 'Chile, remoto',
         period: {
-            from: new Date(2011, 6, 1),
+            from: new Date(2011, 1 - 1, 1),
             to: null
         },
         aptitudes: [
@@ -57,8 +57,8 @@ export const jobs: Job[] = [
         },
         location: 'Chile, remoto',
         period: {
-            from: new Date(2021, 7, 1),
-            to: new Date(2022, 9, 1)
+            from: new Date(2021, 7 - 1, 1),
+            to: new Date(2022, 9 - 1, 1)
         },
         aptitudes: [
             'Next.js',
@@ -79,8 +79,8 @@ export const jobs: Job[] = [
         },
         location: 'Chile, remoto',
         period: {
-            from: new Date(2019, 1, 1),
-            to: new Date(2022, 9, 1)
+            from: new Date(2019, 1 - 1, 1),
+            to: new Date(2022, 9 - 1, 1)
         },
         aptitudes: [
             'Dirección de equipos de trabajo',
@@ -100,8 +100,8 @@ export const jobs: Job[] = [
         },
         location: 'Chile, Viña del Mar',
         period: {
-            from: new Date(2018, 2, 1),
-            to: new Date(2022, 9, 1)
+            from: new Date(2018, 2 - 1, 1),
+            to: new Date(2022, 9 - 1, 1)
         },
         aptitudes: [
             'Laravel',
@@ -125,8 +125,8 @@ export const jobs: Job[] = [
         },
         location: 'Chile, Viña del Mar',
         period: {
-            from: new Date(2017, 10, 1),
-            to: new Date(2019, 2, 1)
+            from: new Date(2017, 10 - 1, 1),
+            to: new Date(2019, 2 - 1, 1)
         },
         aptitudes: ['Laravel', 'Wordpress', 'React.js', 'React Native', 'Angular'],
         description:
@@ -143,8 +143,8 @@ export const educations: Education[] = [
         },
         location: 'Chile, Viña del Mar',
         period: {
-            from: new Date(2019, 12, 1),
-            to: new Date(2015, 3, 1)
+            from: new Date(2019, 12 - 1, 1),
+            to: new Date(2015, 3 - 1, 1)
         }
     },
     {
@@ -155,8 +155,8 @@ export const educations: Education[] = [
         },
         location: 'Chile, Viña del Mar',
         period: {
-            from: new Date(2017, 12, 1),
-            to: new Date(2015, 3, 1)
+            from: new Date(2017, 12 - 1, 1),
+            to: new Date(2015, 3 - 1, 1)
         }
     }
 ];
@@ -169,7 +169,7 @@ export const certifications: Certification[] = [
             url: 'https://certjoin.com/campus/mod/customcert/verify_certificate.php',
             code: 'nkFh5hyPX5'
         },
-        date: new Date(2021, 11, 1)
+        date: new Date(2021, 11 - 1, 1)
     },
     {
         title: 'Scrum Product Owner Certified Expert',
@@ -178,7 +178,7 @@ export const certifications: Certification[] = [
             url: 'https://certjoin.com/campus/mod/customcert/verify_certificate.php',
             code: 'MQ4F0FrkMe'
         },
-        date: new Date(2021, 11, 1)
+        date: new Date(2021, 11 - 1, 1)
     },
     {
         title: 'Desarrollo de App Móviles',
@@ -187,7 +187,7 @@ export const certifications: Certification[] = [
             url: 'https://learndigital.withgoogle.com/activate/validate-certificate-code',
             code: 'ETK UEM LUB'
         },
-        date: new Date(2021, 4, 1)
+        date: new Date(2021, 4 - 1, 1)
     },
     {
         title: 'Programación en Python I',
@@ -196,6 +196,6 @@ export const certifications: Certification[] = [
             url: 'https://www.coursera.org/account/accomplishments/verify/TLLTAKHH6Q5F',
             code: 'TLLTAKHH6Q5F'
         },
-        date: new Date(2020, 11, 1)
+        date: new Date(2020, 11 - 1, 1)
     }
 ];

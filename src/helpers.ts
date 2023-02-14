@@ -26,6 +26,7 @@ export const formatJobDate = (date: Date | null) => {
     if (!date) {
         return 'actualidad';
     }
+
     return date.toLocaleDateString('es-ES', {
         year: 'numeric',
         month: 'long'
@@ -42,10 +43,10 @@ export const timestampToDate = (timestamp: number) => {
 };
 
 export const validateForm = ({
-    name,
-    email,
-    message
-}: {
+                                 name,
+                                 email,
+                                 message
+                             }: {
     name: string;
     email: string;
     message: string;
